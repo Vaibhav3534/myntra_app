@@ -1,6 +1,6 @@
 import React from "react";
-import Sort from "../Sort/Sort";
-import Cards from "./Cards";
+import Sort from "../components/Sort/Sort";
+import Cards from "../components/Product/Cards";
 
 const HomePage = () => {
     return(

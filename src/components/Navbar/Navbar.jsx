@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBagShopping, faSearch, faUser, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { useSelector, useDispatch } from "react-redux";
 import { filter } from "../../redux/Reducer/data";
-import Modal from "../Product/Modal"
+import Modal from "../Product/Wishlist"
 import Cart from "../Product/Cart";
 import { NavLink } from "react-router-dom";
 import ProductData from "../Product/ProductData";

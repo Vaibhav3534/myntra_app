@@ -1,10 +1,9 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "../../helper.css";
-import Breadcrums from "../DetailsPage/ProductTitle";
-import { getSortedData } from "../../redux/Reducer/data";
 import { filter, sort } from "../../redux/Reducer/data";
 import ProductData from "../Product/ProductData";
+import ProductTitle from "../DetailsPage/ProductTitle";
 
 const Sort = () => {
   const sortData = useSelector((state) => state.appData.sortArray);
@@ -26,7 +25,7 @@ const Sort = () => {
   
   return (
     <div className="container">
-      <Breadcrums title="Home / Shirts" />
+      <ProductTitle title="Home / Shirts" />
       <div className="flexed">
         <div className="">
           <strong>FILTERS</strong>

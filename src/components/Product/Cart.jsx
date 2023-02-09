@@ -40,7 +40,7 @@ const Cart = () => {
 										</div>
 									</div>
 								</div>
-							) : null;
+							) : <h2>Cart is empty</h2>;
 						})}
 					</div>
 				</div>
