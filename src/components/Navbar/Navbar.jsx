@@ -18,15 +18,16 @@ const Navbar = () => {
 	const [showCart, setShowCart] = useState(false)
 	const [searchParams, setSearchParams] = useState("");
 	const [ data, setData] = useState([])
+
 	const navigate = useNavigate()
 	const dispatch = useDispatch()
+	
 	const handleSearch = (e)=>{
 		setSearchParams(e.target.value)
 		const searchdata = ProductData.filter((item)=>item.product == e.target.value)
 		setData(searchParams)
 		if(e.key ==="Enter" ){
-			
-			console.log("enteredddd")
+			// console.log("enteredddd")
 			selectCategory(e.target.value)
 			navigate("/")
 		}
@@ -34,8 +35,7 @@ const Navbar = () => {
 	}
 
 	const selectCategory = (category) => {
-
-			console.log(category)
+			// console.log(category)
 			dispatch(filter({type: 'search', value: category}))
 	}
 
@@ -47,7 +47,7 @@ const Navbar = () => {
 				<input type="checkbox" id="nav-check" />
 				<div className="nav-header">
 					<div className="nav-title">
-						<NavLink to="/"><img src={myntraLogo} alt="logo" height="50px" /></NavLink>
+						<NavLink to="/"><img src={myntraLogo} alt="logo" height="50px" onClick={()=>window.location.href("/")}/></NavLink>
 					</div>
 				</div>
 				<div className="nav-btn">

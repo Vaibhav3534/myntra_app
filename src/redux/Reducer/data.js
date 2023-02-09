@@ -76,19 +76,17 @@ export const counterSlice = createSlice({
   name: "appData",
 
   reducers: {
-
-    //Reducer which contains function for FILTERS , SORTING 
+    //Reducer which contains function for FILTERS , SORTING
     filter: (state, action) => {
       // let filterData = [];
       console.log(action);
       const { payload } = action;
       let allProducts = [...state.value.data]
       let filteredProducts = [...state.value.filterData]
-
       switch (payload.type) {
 
         // Reducer for filtering the data from the database
-        case "filter":
+        case "FILTER":
           const filters = filteredProducts.length === 0 ? state.value.data.map((currData) => {
             //   console.log(currData);
             if (action.payload.value === currData.filter) {
@@ -105,10 +103,9 @@ export const counterSlice = createSlice({
           break;
 
 
-        case "category":
+        case "CATEGORY":
           // action.payload = ['zara','wrong'];
-          // const data3 = [...allProducts]
-          const categories = state.value.filterData.length === 0 ? state.value.data.map((currData) => {
+          const categories = filteredProducts.length === 0 ? allProducts.map((currData) => {
             console.log("first")
             if (
               action.payload.value.find(
@@ -126,7 +123,7 @@ export const counterSlice = createSlice({
           break;
 
 
-        case "brand":
+        case "BRAND":
           // action.payload = ['zara','wrong'];
 
           const brands = filteredProducts.length === 0 ? allProducts.map((currData) => {
@@ -144,7 +141,7 @@ export const counterSlice = createSlice({
           break;
 
         // action type == search -- action to get search data from database
-        case "search":
+        case "SEARCH":
           const search = action.payload.value
           const searchData = state.value.data.map((item) => {
             if (item.product == search) {
@@ -158,7 +155,7 @@ export const counterSlice = createSlice({
 
 
         //Reducer for sorting products 
-        case "lth":
+        case "LTH":
 
           // const allProducts = [...state.value.data]
           // const filteredProducts = [...state.value.filterData]
@@ -171,7 +168,7 @@ export const counterSlice = createSlice({
           state.value.data = data;
           break;
 
-        case "htl":
+        case "HTL":
 
           // const allProducts = [...state.value.data]
           // const filteredProducts = [...state.value.filterData]
@@ -184,7 +181,7 @@ export const counterSlice = createSlice({
           state.value.data = data1;
           break;
 
-        case "default":
+        case "DEFAULT":
 
           const data2 = filteredProducts.length === 0 ? allProducts
 

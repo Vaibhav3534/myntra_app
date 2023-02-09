@@ -18,22 +18,22 @@ const Filter = () => {
     if (brands.includes(brand)) {
       let newBrand = brands.filter(item => brand !== item);
       setBrands(newBrand);
-      dispatch(filter({ type: 'brand', value: newBrand }))
+      dispatch(filter({ type: 'BRAND', value: newBrand }))
     } else {
       // setBrands(brands.push(brand))
       setBrands([...brands, brand])
-      dispatch(filter({ type: 'brand', value: [...brands, brand] }))
+      dispatch(filter({ type: 'BRAND', value: [...brands, brand] }))
     }
   }
   const selectCategory = (category) => {
     if (categories.includes(category)) {
       let newCategory = categories.filter(item => category !== item);
       setCategories(newCategory);
-      dispatch(filter({ type: 'category', value: newCategory }))
+      dispatch(filter({ type: 'CATEGORY', value: newCategory }))
     } else {
       // setBrands(brands.push(brand))
       setCategories([category])
-      dispatch(filter({ type: 'category', value: [category] }))
+      dispatch(filter({ type: 'CATEGORY', value: [...categories,category] }))
     }
   }
 
@@ -47,14 +47,14 @@ const Filter = () => {
               <input
                 type="radio"
                 name="gender"
-                onClick={() => dispatch(filter({ type: 'filter', value: 'men' }))}
+                onClick={() => dispatch(filter({ type: 'FILTER', value: 'men' }))}
               />
               <label>Men</label>
               <br />
               <input
                 type="radio"
                 name="gender"
-                onClick={() => dispatch(filter({ type: 'filter', value: 'women' }))}
+                onClick={() => dispatch(filter({ type: 'FILTER', value: 'women' }))}
 
               />
               <label>Women</label>
@@ -62,7 +62,7 @@ const Filter = () => {
               <input
                 type="radio"
                 name="gender"
-                onClick={() => dispatch(filter({ type: 'filter', value: 'boys' }))}
+                onClick={() => dispatch(filter({ type: 'FILTER', value: 'boys' }))}
 
               />
               <label>Boys</label>
@@ -70,7 +70,7 @@ const Filter = () => {
               <input
                 type="radio"
                 name="gender"
-                onClick={() => dispatch(filter({ type: 'filter', value: 'girls' }))}
+                onClick={() => dispatch(filter({ type: 'FILTER', value: 'girls' }))}
 
               />
               <label>Girls</label>
@@ -120,14 +120,14 @@ const Filter = () => {
             <div className="label-space">
               <input type="checkbox" onClick={() => {
                 //   debugger
-                selectBrand('zara')
+                selectBrand('roadster')
                 //   dispatch(filter({type: 'brand', value: brands}))
               }
               } />
               <label>Roadster</label>
               <br />
               <input type="checkbox" onClick={() => {
-                selectBrand('harvard')
+                selectBrand('zara')
                 //   dispatch(filter({type: 'brand', value: brands}))
               }
               } />
@@ -141,7 +141,7 @@ const Filter = () => {
               <label>Parx</label>
               <br />
               <input type="checkbox" onClick={() => {
-                selectBrand('roadster')
+                selectBrand('harvard')
 
               }
               } />

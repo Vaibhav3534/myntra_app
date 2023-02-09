@@ -42,7 +42,7 @@ const ProductItem = () => {
                                                     </div>
                                                 </div>
                                                 <p className="card-title">{product}</p>
-                                                <p className="card-price">{price}</p>
+                                                <p className="card-price">Rs {price}</p>
 
                                                 {
                                                     hover ? <div className="wishlist-wrapper">
